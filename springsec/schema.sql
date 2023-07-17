@@ -1,3 +1,15 @@
+/*
+# grant all privileges  on *.* to 'admin'@'%';
+
+# select *from mysql.user where user = 'admin';
+
+create database eazybank;
+
+use eazybank;
+
+*/
+
+
 /* Create users table */
 create table if not exists users(
 	id int not null auto_increment,
