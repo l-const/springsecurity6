@@ -1,0 +1,17 @@
+#!/usr/bin/env just --justfile
+alias db := create-db
+# maven build without tests
+build:
+   mvn -DskipTests clean package
+
+# dependencies tree for compile
+dependencies:
+  mvn dependency:tree -Dscope=compile > dependencies.txt
+
+# display updates
+updates:
+  mvn versions:display-dependency-updates > updates.txt
+
+
+create-db:
+ docker-compose -f docker-compose.yml up

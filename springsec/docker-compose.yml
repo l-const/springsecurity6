@@ -17,6 +17,7 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: 1234
     volumes:
+      - $PWD/schema.sql:/docker-entrypoint-initdb.d/1.sql
       - my-db:/var/lib/mysql
 volumes:
   my-db:
